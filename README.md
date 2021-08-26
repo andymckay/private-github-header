@@ -1,9 +1,11 @@
-# private-github-header
+# public-github-header
 
-Web Extension to modify the GitHub header for private repos
+Web Extension to modify the GitHub header for public repos
 
 For people who frequently work in both private and public GitHub repositories,
 this provides a clear visual distinction between the two.
+
+This is the inverse of https://github.com/gtback/private-github-header and the source slightly modified.
 
 **Private repos**:
 
