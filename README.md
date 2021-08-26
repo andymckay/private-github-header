@@ -5,11 +5,11 @@ Web Extension to modify the GitHub header for private repos
 For people who frequently work in both private and public GitHub repositories,
 this provides a clear visual distinction between the two.
 
-**Public repos**:
+**Private repos**:
 
 ![Public repos](public.png)
 
-**Private repos**:
+**Public repos**:
 
 ![Private repos](private.png)
 
