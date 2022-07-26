@@ -17,5 +17,5 @@ function isPrivateRepo() {
 
 if (isRepo() && !isPrivateRepo()) {
   // Set the background color of the header to dark red.
-  document.querySelectorAll("header")[0].style.backgroundColor = "darkRed";
+  document.querySelectorAll("header[role='banner']")[0].style.backgroundColor = "darkRed";
 }
