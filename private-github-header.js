@@ -15,7 +15,43 @@ function isPrivateRepo() {
   return false;
 }
 
+function isNewProject() {
+  return document.getElementById("memex-root");
+}
+
 if (isRepo() && !isPrivateRepo()) {
   // Set the background color of the header to dark red.
-  document.querySelectorAll("header[role='banner']")[0].style.backgroundColor = "darkRed";
+  document.querySelectorAll("header[role='banner']")[0].style.backgroundColor = "green";
+}
+
+if (isNewProject()) {
+  setInterval(findIssue, 100)
+}
+
+function updateElement(link, status) {
+  let msg = "Public";
+  if (status !== "OK") {
+    msg = "Private";
+  }
+  let span = document.createElement("span")
+  span.className = "Label Label--secondary v-align-middle mr-1 ml-2"
+  if (msg === "Public") {
+    span.style = "background-color: red; color: white"
+  }
+  span.innerText = msg
+  link.appendChild(span)
+
+}
+
+function findIssue() {
+  let regex = /^#(\d+)$/;
+  document.querySelectorAll("a[target=_blank]").forEach(function(link) {
+    if (link.innerText.match(regex)) {
+      if (!link.classList.contains("extension-repository")) {
+        link.classList.add("extension-repository");
+        fetch(link.href, {credentials: 'omit'})
+        .then((response) => updateElement(link, response.statusText))
+      }
+    }
+  })
 }
