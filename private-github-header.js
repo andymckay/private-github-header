@@ -21,7 +21,7 @@ function isNewProject() {
 
 if (isRepo() && !isPrivateRepo()) {
   // Set the background color of the header to dark red.
-  document.querySelectorAll("header[role='banner']")[0].style.backgroundColor = "green";
+  document.querySelectorAll("header[role='banner']")[0].style.backgroundColor = "red";
 }
 
 if (isNewProject()) {
